@@ -24,7 +24,7 @@ function App() {
         const formData = new FormData();
         formData.append('file', file);
 
-        axios.post('http://localhost:8000/predict', formData, {
+        axios.post('https://flower-classifier-7yed.onrender.com/predict', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
