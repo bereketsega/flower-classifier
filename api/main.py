@@ -12,7 +12,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://flower-classifier-7yed.onrender.com/"
+    "https://flower-classifier-client.onrender.com/"
 ]
 
 app.add_middleware(
