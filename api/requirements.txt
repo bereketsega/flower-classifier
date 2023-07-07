@@ -1,5 +1,5 @@
 flask
-fastapi=0.99.1
+fastapi
 numpy
 Pillow
 waitress
