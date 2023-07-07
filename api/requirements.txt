@@ -1,0 +1,6 @@
+flask
+fastapi=0.99.1
+numpy
+Pillow
+waitress
+tensorflow
