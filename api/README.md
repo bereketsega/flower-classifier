@@ -21,5 +21,6 @@ pip install -r requirements.txt
 
 ### Run the server
 ```bash
-python3 app.py
+python3 main.py
 ```
+The api should be running on `http://localhost:8000`
