@@ -4,3 +4,4 @@ numpy
 Pillow
 waitress
 tensorflow
+uvicorn
