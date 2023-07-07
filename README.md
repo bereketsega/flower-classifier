@@ -27,3 +27,7 @@ git clone https://github.com/bereketsega/match-service.git
 
 3. Start the client.
 - `cd` into `client` directory. There will a direction on the [README.md](/client/README.md) file on how to start the client.
+
+### Example
+<!-- display image from assets folder -->
+![Flower Classifier Example](/assets/client.png "Flower Classifier")
