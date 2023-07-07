@@ -1,0 +1,62 @@
+.header {
+    background-color: #282c34;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    max-width: 1440px;
+}
+.header h1 {
+    margin-left: 20px;
+}
+
+.header a {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    float: right;
+    text-decoration: none;
+    color: white;
+}
+
+.header a p {
+    margin-left: 10px;
+}
+
+.input-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;    
+}
+
+.input-file input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #1e2228;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-file img {
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.prediction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.prediction p {
+    font-size: 20px;
+    font-weight: 400;
+}
