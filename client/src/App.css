@@ -110,7 +110,6 @@
 @media (max-width: 420px) {
     .header {
         flex-direction: column;
-        border: 1px solid white;
     }
     .header h1 {
         margin-left: 0px;
