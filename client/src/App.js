@@ -6,10 +6,11 @@ import { FaGithub } from "react-icons/fa6";
 function App() {
     const [data, setData] = useState(null)
     const [res, setRes] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleFileUpload = async (e) => {
+        setLoading(true);
         const file = e.target.files[0]; // get the file
-
         // display the image
         const img = new Image();
         img.src = URL.createObjectURL(file);
@@ -24,7 +25,7 @@ function App() {
         const formData = new FormData();
         formData.append('file', file);
 
-        axios.post('https://flower-classifier-7yed.onrender.com/predict', formData, {
+        await axios.post('https://flower-classifier-7yed.onrender.com/predict', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
@@ -37,6 +38,8 @@ function App() {
             img.style.border = `1px solid ${getColor(res.data.confidence)}`;
         }
         ).catch(err => console.log(err));
+        setLoading(false);
+
     }
 
     /**
@@ -55,7 +58,6 @@ function App() {
         }
     }
 
-
   return (
     <div className="App">
         <header className='header'>
@@ -65,17 +67,26 @@ function App() {
                 <p>GitHub</p>
             </a>
         </header>
+        <h3>Upload an image of a flower to predict </h3>
         <div className='input-file'>
             <input type="file" onChange={handleFileUpload}/>
             <img src={data ? data.src: null} alt="" width={'400px'} height={'400px'}/>
         </div>
 
-        {res && 
-        <div className='prediction'>
-            <p>Flower Type: {res.class}</p>
-            <p>Confidence: {res.confidence}%</p>
-        </div>
-        }
+        {res && !loading ? (
+            <div className='prediction'>
+                <p>Flower Type: {res.class}</p>
+                <p>Confidence: {res.confidence}%</p>
+            </div>
+        ) : null}
+        {loading ? (
+            <div className='prompt'>
+                <p>Predicting...</p>
+                <div className="spinner"></div>
+            </div>
+        ) : (
+            null
+        )}
     </div>
   );
 }
